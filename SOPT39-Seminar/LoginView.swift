@@ -47,6 +47,11 @@ struct LoginView: View {
                 
             Spacer()
             
+            Divider()
+                .frame(height: 1)
+                .background(.gray100)
+                .padding(.bottom, 20)
+            
             HStack(alignment: .center, spacing: 11) {
                 Text("계정이 없으신가요?")
                     .font(.system(size: 12, weight: .regular))
