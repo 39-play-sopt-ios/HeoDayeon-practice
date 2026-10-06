@@ -72,6 +72,8 @@ struct InputView: View {
                     .background(.instagramBlue)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
             }
+            .disabled(email.isEmpty || password.isEmpty)
+            .opacity(email.isEmpty || password.isEmpty ? 0.6 : 1)
             
             Spacer()
         }
