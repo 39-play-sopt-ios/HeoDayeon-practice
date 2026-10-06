@@ -59,8 +59,16 @@ struct InputView: View {
                 .overlay {
                     RoundedRectangle(cornerRadius: 5).stroke(.gray200, lineWidth: 0.5)
                 }
-                .padding(.bottom, 63)
+                .padding(.bottom, 16)
 
+            Link("비밀번호를 잊으셨나요?",
+                 destination: URL(string: "https://www.instagram.com")!)
+                .font(.system(size: 12, weight: .regular))
+                .foregroundStyle(.instagramBlue)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .underline(true)
+                .padding(.bottom, 44)
+            
             Button {
                 //login
             } label: {
