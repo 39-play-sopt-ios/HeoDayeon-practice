@@ -14,10 +14,18 @@ struct LoginView: View {
             
             Image("logo").padding(.bottom, 65)
             
-            Image("profile").padding(.bottom, 15)
+            Image("profile_v2")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 150, height: 150)
+                .offset(y: 10)
+                .frame(width: 85, height: 85)
+                .clipShape(Circle())
+                .padding(.bottom, 15)
             
             Text("moamoa")
                 .font(.system(size: 14, weight: .semibold))
+                .fontDesign(.serif)
                 .padding(.bottom, 12)
             
             Button {
@@ -34,6 +42,7 @@ struct LoginView: View {
             
             Button("계정 전환") {}
                 .font(.system(size: 14, weight: .semibold))
+                .underline(true)
                 .foregroundStyle(.instagramBlue)
                 
             Spacer()
