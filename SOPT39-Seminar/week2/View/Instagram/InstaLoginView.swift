@@ -1,0 +1,98 @@
+//
+//  LoginView.swift
+//  SOPT39-Seminar
+//
+//  Created by dayeon on 10/10/26.
+//
+
+import SwiftUI
+
+struct InstaLoginView: View {
+    @State private var email = ""
+    @State private var password = ""
+    
+    var body: some View {
+        
+            NavigationStack {
+                Spacer()
+                
+                Image("logo")
+                    .padding(.bottom, 44)
+                
+                TextField(
+                    "이메일",
+                    text: $email,
+                    prompt: Text("이메일을 입력하세요")
+                        .font(.system(size: 14, weight: .regular))
+                        .foregroundStyle(.black.opacity(0.2))
+                )
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundStyle(.black)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.horizontal, 15)
+                    .frame(height: 44)
+                    .background()
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 0.5)
+                    }
+                    .padding(.bottom, 12)
+                
+                SecureField(
+                    "비밀번호",
+                    text: $password,
+                    prompt: Text("비밀번호를 입력하세요")
+                        .font(.system(size: 14, weight: .regular))
+                        .foregroundStyle(.black.opacity(0.2))
+                )
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundStyle(.black)
+                    .textContentType(.password)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.horizontal, 15)
+                    .frame(height: 44)
+                    .background()
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 0.5)
+                    }
+                    .padding(.bottom, 16)
+
+                Link("비밀번호를 잊으셨나요?",
+                     destination: URL(string: "https://www.instagram.com")!)
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundStyle(.blue)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .underline(true)
+                    .padding(.bottom, 44)
+                
+                NavigationLink {
+                    InstaProfileView(name: email)
+                } label: {
+                    Text("로그인하기")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
+                .disabled(email.isEmpty || password.isEmpty)
+                .opacity(email.isEmpty || password.isEmpty ? 0.6 : 1)
+                
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            
+            
+        }
+    
+}
+
+#Preview{
+    InstaLoginView()
+}
