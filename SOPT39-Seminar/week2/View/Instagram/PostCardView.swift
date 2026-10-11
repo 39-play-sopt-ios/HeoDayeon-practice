@@ -53,16 +53,19 @@ struct PostCardView: View {
         }
         .padding(.vertical, 12)
         .padding(.horizontal, 10)
-        .frame(width: .infinity)
+        .frame(maxWidth: .infinity)
     }
     
     private var postImageView: some View {
         ZStack (alignment: .topTrailing) {
-            postImage
-                .resizable()
-                .scaledToFill()
-                .frame(width: .infinity, height: 375)
-                .clipShape(Rectangle())
+            Rectangle()
+                .aspectRatio(1, contentMode: .fit)
+                .overlay {
+                    postImage
+                        .resizable()
+                        .scaledToFill()
+                }
+                .clipped()
             
             Image(.icPhotoNumber)
                 .resizable()
@@ -149,7 +152,7 @@ struct PostCardView: View {
             .padding(.horizontal, 14)
             
             HStack (spacing: 6) {
-                Text("moamoa")
+                Text(username)
                     .font(.system(size: 13, weight: .bold))
                 
                 Text(caption)
