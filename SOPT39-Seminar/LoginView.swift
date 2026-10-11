@@ -49,7 +49,7 @@ struct LoginView: View {
             
             Divider()
                 .frame(height: 1)
-                .background(.gray100)
+                .overlay(.gray200)
                 .padding(.bottom, 20)
             
             HStack(alignment: .center, spacing: 11) {
