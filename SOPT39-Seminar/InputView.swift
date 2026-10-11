@@ -61,13 +61,21 @@ struct InputView: View {
                 }
                 .padding(.bottom, 16)
 
-            Link("비밀번호를 잊으셨나요?",
-                 destination: URL(string: "https://www.instagram.com")!)
-                .font(.system(size: 12, weight: .regular))
-                .foregroundStyle(.instagramBlue)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .underline(true)
-                .padding(.bottom, 44)
+            if let url = URL(string: "https://www.instagram.com") {
+                Link("비밀번호를 잊으셨나요?", destination: url)
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundStyle(.instagramBlue)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .underline(true)
+                    .padding(.bottom, 44)
+            } else {
+                Text("비밀번호를 잊으셨나요?")
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundStyle(.instagramBlue)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .underline(true)
+                    .padding(.bottom, 44)
+            }
             
             Button {
                 //login
