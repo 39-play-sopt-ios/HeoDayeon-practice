@@ -18,6 +18,8 @@ struct PostModel: Identifiable {
     let caption: String
     let timeText: String
     var isLiked = false
+    var isSaved = false
+    var showSheet = false
 }
 
 let examplePosts: [PostModel] = [

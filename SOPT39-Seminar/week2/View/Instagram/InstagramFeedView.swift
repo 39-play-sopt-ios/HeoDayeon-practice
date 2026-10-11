@@ -20,6 +20,8 @@ struct InstagramFeedView: View {
                     
                     ForEach($posts) { $post in
                         PostCardView(isLiked: $post.isLiked,
+                                     isSaved:$post.isSaved,
+                                     showSheet: $post.showSheet,
                                      profileImage: Image(post.profileImageName),
                                      username: post.username,
                                      location: post.location,
