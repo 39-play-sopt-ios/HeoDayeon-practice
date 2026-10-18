@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChatModel: Identifiable {
+struct MessageModel: Identifiable {
     let id = UUID()
     let profileImageName: String
     let nickName: String

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InstagramMessageRowView: View {
     
-    var msg: ChatModel
+    var msg: MessageModel
     
     var body: some View {
         HStack (spacing: 0) {

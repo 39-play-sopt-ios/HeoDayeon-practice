@@ -10,9 +10,8 @@ import SwiftUI
 struct InstagramMessageView: View {
     @State private var viewModel = InstagramMessageViewModel()
     
-    
     var body: some View {
-        List(viewModel.exampleChats) { msg in
+        List(viewModel.exampleMsgs) { msg in
             InstagramMessageRowView(msg: msg)
             .listRowSeparator(.hidden)
             .listRowInsets(
