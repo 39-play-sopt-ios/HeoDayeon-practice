@@ -5,7 +5,7 @@
 //  Created by dayeon on 10/17/26.
 //
 
-import SwiftUI
+import Foundation
 
 struct MessageModel: Identifiable {
     let id = UUID()
