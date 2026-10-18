@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InstagramMessageRowView: View {
     
-    var msg: MessageModel
+    let msg: MessageModel
     
     var body: some View {
         HStack (alignment: .center, spacing: 0) {
