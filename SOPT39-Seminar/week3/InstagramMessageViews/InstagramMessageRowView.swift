@@ -12,7 +12,7 @@ struct InstagramMessageRowView: View {
     var msg: MessageModel
     
     var body: some View {
-        HStack (spacing: 0) {
+        HStack (alignment: .center, spacing: 0) {
             Image(msg.profileImageName)
                 .resizable()
                 .frame(width: 56, height: 56)
@@ -25,7 +25,7 @@ struct InstagramMessageRowView: View {
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(.black)
                 
-                HStack (spacing: 0) {
+                HStack (alignment: .center, spacing: 0) {
                     Text("\(msg.textContent)")
                     
                     

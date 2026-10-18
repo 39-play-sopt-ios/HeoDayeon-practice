@@ -14,7 +14,7 @@ struct InstagramSearchView: View {
     private let rowCount = 6
     
     var body: some View {
-        VStack(spacing: 23) {
+        VStack(alignment: .center, spacing: 23) {
             searchFieldView
             
             ScrollView {
@@ -42,7 +42,7 @@ struct InstagramSearchView: View {
     }
     
     private var searchFieldView: some View {
-        HStack(spacing: 13) {
+        HStack(alignment: .center, spacing: 13) {
             TextField("검색", text: $searchText, prompt: Text("검색"))
                 .font(.system(size: 13, weight: .regular))
                 .padding(.horizontal, 15)
